@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Spiral Histogram</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script type="text/javascript" src="d3.js"></script>
+  </head>
+  <body>
+  <h1 align="center">EVOLUTION OF FLIGHT DELAYS AND CANCELLATIONS</h1>
+  <section>
+    <h3>Introduction</h3>
+    <p> Every day, globalization is making the world a more connected place. This causes a worldwide increase in the demand of flights. Given that individuals care about using their time efficiently, most of them use planes as mean of transfortation for large distances. However, do they always make the right decision by taking flights? Flight delays and cancellations make individuals lose a lot of their time. Therefore, it is of interest to know the evolution of delayed and cancelled flights in the recent past.</p>
+  </section>
+  <section>
+    <h3>Data Set</h3>
+    <p>The data set used in this report has been provided by the U.S. Department of Transportation's Bureau of Transportation Statisics, which can be found by clicking this <a href="https://www.kaggle.com/usdot/flight-delays" target="_blank" style="color:blue">link</a>. This data set contains information about delayed and cancelled flights during the year of 2015. Each observation (belonging to each row of the data set) corresponds to a given delayed or cancelled flight. Some of the provided variables are month, day, airline company and airport.</p>
+  </section>
+  <section>
+    <h3>Data Manipulation</h3>
+    <p>The objective of this report is to provide a simple descriptive analysis by using a quite advance interactive graph made in D3. Given that the full date of the flight was not a provided variable (it was separated in year, moth and day) it has been created using the R language. Then, the amount of delayed and cancelled flights has been counted for each of the days. The objective is to plot the evolution of these counts over the whole year of 2015. A histogram with spiral shape is the chosen statistical tool to decribe this evolution. Given that the number of counts are very high, the difference between them is hard to be perceived in a histogram. For this reason I have decided to subtract the minimum value of delayed and cancelled flights from all counts. This minimum value is 10.068 delayed and cancelled flights and corresponds to the 26th of November of 2015.</p>
+  </section>
+  <section>
+    <h3>Descriptive Statistics: Spiral Histogram</h3>
+    <p>The following spiral histogram has 365 bars, corresponding to each of the days of the year. Each color of the bars corresponds to a different month. In order to know the exact value just put the mouse on the bar.</p>
+	   <div id="chart"></div>
+        <script type="text/javascript" src="main.js"></script>
+    <p>Note that there is no clear overall trend of the delayed and cancelled flights. However, there is a pattern in the previous plot. During the weekends the mount of delayed and cancelled flights decrease dramatically. Given that this work is just about decrriptive statistics no conclusions are drawn from this pattern</p>
+  </section>
+  <section>
+    <h3>Future Research</h3>
+    <p>Given that in the data set there is a variable that specifies the airline company it would be interesting to see how delayed and cancelled flights evolve for each of them in order to make easier for consumers to choose the most optimal airline (in terms of cost of the ticket and probability of delay or cancellation). On the other hand, it is possible that the amount of delayed and cancelled flights is smaller during the weekends because the amount of operative flights during these dates is smaller. Therefore, it would be interesting to merge this data set with another data set that accounts for the total amount of flights in the U.S. during each day of 2015 and use relative numbers instead of absolute.</p>
+  </section>
+  </body>
+</html>
